@@ -1,0 +1,139 @@
+:root {
+    --black: #0A0A0A;
+    --white: #F5F5F5;
+}
+
+@font-face {
+    font-family: Frames;
+    src: url(../fonts/FramesPartOne-Thin.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Frames;
+    src: url(../fonts/FramesPartOne-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Frames;
+    src: url(../fonts/FramesPartOne-Regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Frames;
+    src: url(../fonts/FramesPartOne-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Frames;
+    src: url(../fonts/FramesPartOne-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Thin.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-ExtraLight.otf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-SemiBold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-ExtraBold.otf);
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Fixel;
+    src: url(../fonts/FixelDisplay-Black.otf);
+    font-weight: 900;
+}
+
+::-webkit-scrollbar {
+    width: 7.5px;
+    height: 7.5px;
+}
+
+::-webkit-scrollbar:vertical {
+    background: var(--black);
+}
+
+::-webkit-scrollbar:horizontal {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: var(--white);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: var(--black);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+.html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p, a:link, a:visited, a:active, a:hover {
+    font-family: Fixel;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 135%;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Frames;
+    font-weight: 600;
+    line-height: 135%;
+}
