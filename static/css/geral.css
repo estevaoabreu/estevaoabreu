@@ -127,7 +127,7 @@ body {
 p, a:link, a:visited, a:active, a:hover {
     font-family: Fixel;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 0.9em;
     line-height: 135%;
     text-decoration: none;
 }

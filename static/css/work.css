@@ -12,7 +12,7 @@ p {
     font-weight: 700;
     color: var(--white);
     width: 60%;
-    font-size: 74px;
+    font-size: 4.5em;
     margin: 0;
     margin-left: 10px;
     letter-spacing: 0.27em;
@@ -66,7 +66,7 @@ p {
 .tags,
 .tools {
     font-family: Fixel;
-    font-size: 15px;
+    font-size: 0.9em;
     line-height: 135%;
     height: 100%;
     flex-grow: 1;
@@ -184,7 +184,7 @@ main img {
   top: 20px;
   right: 30px;
   color: var(--white);
-  font-size: 30px;
+  font-size: 2em;
   font-family: Fixel;
   font-weight: bold;
   cursor: pointer;
@@ -200,7 +200,7 @@ main img {
   border: none;
   color: var(--white);
   font-family: Fixel;
-  font-size: 30px;
+  font-size: 2em;
   font-weight: bold;
   cursor: pointer;
   opacity: 1;

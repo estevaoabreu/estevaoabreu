@@ -1,51 +1,65 @@
 <footer>
-    <p>© 2025 Estêvão Abreu</p>
-    <ul>
-        <li>
-            <a href="mailto:estevao.abreu40@gmail.com" target="_blank">Email</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/estevao-abreu/" target="_blank">LinkedIn</a>
-        </li>
-        <li>
-            <a href="https://github.com/estevaoabreu" target="_blank">GitHub</a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/estevao._.abreu/" target="_blank">Instagram</a>
-        </li>
-    </ul>
+	<p>© 2025 Estêvão Abreu</p>
+	<ul>
+		<li>
+			<a href="mailto:estevao.abreu40@gmail.com" target="_blank">Email</a>
+		</li>
+		<li>
+			<a href="https://www.linkedin.com/in/estevao-abreu/" target="_blank">LinkedIn</a>
+		</li>
+		<li>
+			<a href="https://github.com/estevaoabreu" target="_blank">GitHub</a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/estevao._.abreu/" target="_blank">Instagram</a>
+		</li>
+	</ul>
 </footer>
 
 <style>
-    footer {
+	footer,
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+        flex-wrap: wrap;
+	}
+    
+	footer {
+		height: 100px;
+		justify-content: space-around;
+		background-color: var(--black);
+        margin-top: 15px;
+        margin-bottom: 15px;
         width: 100%;
-        height: 100px;
-        justify-content: space-between;
-        background-color: var(--black);
-    }
+	}
 
-    footer,
-    ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    ul {
-        padding-right: 125px;
-        list-style-type: none;
+	ul {
+		list-style-type: none;
+        justify-content: space-around;
         column-gap: 50px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+	}
+
+    li {
+        text-align: center;
+        line-height: 175%;
+        display: inline-block;
     }
 
-    footer p,
-    footer a:link,
-    footer a:visited,
-    footer a:hover,
-    footer a:active {
-        color: var(--white);
-    }
+	li a {
+		text-decoration: underline;
+        display: inline-block;
+	}
 
-    footer p {
-        padding-left: 125px;
-    }
+	footer p,
+	footer a:link,
+	footer a:visited,
+	footer a:hover,
+	footer a:active {
+		color: var(--white);
+        margin: 0;
+	}
 </style>
