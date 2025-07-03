@@ -31,7 +31,7 @@
 			<div class="works hidden">
 				{#each category.projects as project}
 					<ProjectCard
-						href={'/work?project=' + project.id}
+						href={'/work/' + project.id}
 						title={project.title}
 						tagline={project.tagline}
 						src={project.id}

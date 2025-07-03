@@ -1,10 +1,11 @@
 <script>
-	import Footer from '../footer.svelte';
+	import Footer from '../../footer.svelte';
 	import { setupSectionInteractions } from './gallery.js';
 	import { onMount } from 'svelte';
 	onMount(() => {
 		setupSectionInteractions();
 	});
+	/** @type {import('./$types').PageData} */
 	export let data;
 	$: formattedTags =
 		data?.project?.tags
@@ -36,7 +37,7 @@
 	}
 </script>
 
-<link href="css/work.css" rel="stylesheet" type="text/css" />
+<link href="/css/work.css" rel="stylesheet" type="text/css" />
 <div class="titlediv">
 	<h1 class="title">{data.project.title}</h1>
 </div>
@@ -86,9 +87,9 @@
 		{#each section as content}
 			{#if content.col == 0}
 				{#if content.type == 'img'}
-					<img src={'imgs/' + content.projects_id + '/' + content.content} alt={content.content} />
+					<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.content} />
 				{:else if content.type == 'video'}
-					<video src={'imgs/' + content.projects_id + '/' + content.content} controls></video>
+					<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
 				{/if}
 			{/if}
 		{/each}
@@ -98,7 +99,7 @@
 					{#if content.col == 1}
 						{#if content.type == 'img'}
 							<img
-								src={'imgs/' + content.projects_id + '/' + content.content}
+								src={'/imgs/' + content.projects_id + '/' + content.content}
 								alt={content.content}
 							/>
 						{:else if content.type == 'p'}
@@ -106,7 +107,7 @@
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'imgs/' + content.projects_id + '/' + content.content} controls></video>
+							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
 						{/if}
 					{/if}
 				{/each}
@@ -116,7 +117,7 @@
 					{#if content.col == 2}
 						{#if content.type == 'img'}
 							<img
-								src={'imgs/' + content.projects_id + '/' + content.content}
+								src={'/imgs/' + content.projects_id + '/' + content.content}
 								alt={content.content}
 							/>
 						{:else if content.type == 'p'}
@@ -124,7 +125,7 @@
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'imgs/' + content.projects_id + '/' + content.content} controls></video>
+							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
 						{/if}
 					{/if}
 				{/each}

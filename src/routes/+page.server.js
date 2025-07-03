@@ -1,8 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
+import { supabase } from '$lib/server/supabase';
 import { error } from '@sveltejs/kit';
-
-const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY);
 
 export async function load() {
   try {
@@ -53,7 +50,8 @@ export async function load() {
       categories: categoriesWithProjectsAndContent
     };
   } catch (err) {
-    console.error('Unexpected error:', err);
-    throw error(500, 'Failed to fetch data');
+    console.error('An unexpected error occurred in the load function:', err);
+    if (err.status) throw err;
+    throw error(500, 'An unexpected error occurred while fetching data');
   }
 }
