@@ -91,8 +91,8 @@ ul {
 }
 
 ul li {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 a:link,
@@ -122,14 +122,15 @@ img {
 }
 
 .colleft {
-    width:60%;
+    width: 60%;
 }
 
 .colright {
     width: 36%;
 }
 
-.colleft, .colright{
+.colleft,
+.colright {
     display: flex;
     flex-direction: column;
     row-gap: 50px;
@@ -159,68 +160,192 @@ main img {
 }
 
 .lightbox {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(10,10,10,0.9);
-  z-index: 1000;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.9);
+    z-index: 1000;
 }
 
 #lightbox-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-height: 90vh;
     max-width: 90vw;
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .close-button {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: var(--white);
-  font-size: 2em;
-  font-family: Fixel;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--white);
+    font-size: 2em;
+    font-family: Fixel;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.prev-button, .next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: var(--white);
-  font-family: Fixel;
-  font-size: 2em;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: Fixel;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.prev-button:hover, .next-button:hover, .close-button:hover {
-  opacity: 1;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+.prev-button:hover,
+.next-button:hover,
+.close-button:hover {
+    opacity: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .prev-button {
-  left: 30px;
+    left: 30px;
 }
 
 .next-button {
-  right: 30px;
+    right: 30px;
 }
 
 .hidden {
-  display: none;
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
+
+    p,
+    a:link,
+    a:visited,
+    a:active,
+    a:hover,
+    .tags,
+    .tools {
+        font-size: 0.7em;
+    }
+
+    .title {
+        font-size: 3em;
+        padding: 50px;
+    }
+
+    main {
+        padding: 50px;
+    }
+
+    .textleft,
+    .textright {
+        padding: 50px 0 50px 50px;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:720px) {
+
+    p,
+    a:link,
+    a:visited,
+    a:active,
+    a:hover,
+    .tags,
+    .tools {
+        font-size: 0.7em;
+    }
+
+    .title {
+        font-size: 1.8em;
+        padding: 25px;
+        width: 80%;
+    }
+
+    main {
+        padding: 25px;
+        row-gap: 25px;
+    }
+
+    .details {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .textleft,
+    .textright {
+        width: 80%;
+        padding: 0;
+        padding-left: 25px;
+        height: auto;
+    }
+
+    .textleft {
+        padding-top: 25px;
+    }
+
+    .textright {
+        padding-bottom: 25px;
+    }
+
+    .descandlink,
+    .collabandtags {
+        justify-content: center;
+        row-gap: 25px;
+    }
+
+    .tagsandtools {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 25px;
+        height: 100%;
+    }
+
+    .tags,
+    .tools {
+        width: 100%;
+        min-height: 10%;
+    }
+
+    .prev-button,
+    .next-button {
+        top: 90%;
+    }
+
+    .prev-button {
+        left: 35%;
+    }
+
+    .next-button {
+        right: 35%;
+    }
+
+    .cols {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .colleft,
+    .colright {
+        width: 100%;
+        row-gap: 25px;
+    }
+
+    .colleft p,
+    .colright p {
+        width: 90%;
+    }
 }

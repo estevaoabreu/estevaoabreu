@@ -124,7 +124,11 @@ body {
     padding: 0;
 }
 
-p, a:link, a:visited, a:active, a:hover {
+p,
+a:link,
+a:visited,
+a:active,
+a:hover {
     font-family: Fixel;
     font-weight: 400;
     font-size: 0.9em;
@@ -132,7 +136,12 @@ p, a:link, a:visited, a:active, a:hover {
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Frames;
     font-weight: 600;
     line-height: 135%;
