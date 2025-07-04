@@ -123,6 +123,7 @@ article {
 
 .imgcard:hover {
     height: 100%;
+    width: 100%;
 }
 
 article h1,
@@ -150,7 +151,7 @@ article p {
     padding-bottom: 25px;
 }
 
-article.hover {
+article:hover {
     cursor: pointer;
     padding: 0px;
     width: calc(30vw + 50px);
@@ -193,27 +194,32 @@ section a:last-child {
     }
 
     .works {
-        height: 90vh;
+        height: 80vh;
     }
 
     article {
         width: 40vw;
-        height: 80vh;
+        height: 70vh;
     }
 
-    article.hover {
+    article:hover {
         width: calc(45vw + 50px);
-        height: calc(80vh + 50px);
+        height: calc(70vh + 50px);
+        padding: 0;
     }
 
     .imgcard {
         height: 75%;
     }
+
+    article h1 {
+        font-size: 1.6em;
+    }
 }
 
 @media screen and (max-width:720px) {
     .hello {
-        font-size: 1.2em;
+        font-size: 1.3em;
         align-self: flex-start;
     }
 
@@ -224,24 +230,31 @@ section a:last-child {
 
     .about {
         width: 70vw;
-        font-size: 0.6em;
+        font-size: 0.65em;
         align-self: flex-start;
     }
 
     .works {
-        height: 90vh;
+        height: 60vh;
     }
 
     article {
-        width: 65vw;
+        width: 70vw;
+        height: 50vh;
     }
 
-    article.hover {
-        width: calc(70vw + 50px);
+    article:hover {
+        width: calc(75vw + 50px);
+        height: calc(50vh + 50px);
+        padding: 0;
     }
 
     .imgcard {
-        height: 70%;
+        height: 60%;
+    }
+
+    section p {
+        font-size: 0.9em;
     }
 }
 
