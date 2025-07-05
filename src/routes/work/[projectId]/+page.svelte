@@ -86,9 +86,9 @@
 		{#each section as content}
 			{#if content.col == 0}
 				{#if content.type == 'img'}
-					<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.content} />
+					<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
 				{:else if content.type == 'video'}
-					<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
+					<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
 				{/if}
 			{/if}
 		{/each}
@@ -99,14 +99,14 @@
 						{#if content.type == 'img'}
 							<img
 								src={'/imgs/' + content.projects_id + '/' + content.content}
-								alt={content.content}
+								alt={content.alt}
 							/>
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
+							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
 						{/if}
 					{/if}
 				{/each}
@@ -117,14 +117,14 @@
 						{#if content.type == 'img'}
 							<img
 								src={'/imgs/' + content.projects_id + '/' + content.content}
-								alt={content.content}
+								alt={content.alt}
 							/>
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls></video>
+							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
 						{/if}
 					{/if}
 				{/each}
@@ -134,7 +134,7 @@
 </main>
 <div id="lightbox" class="lightbox hidden">
 	<span class="close-button">&times;</span>
-	<img id="lightbox-image" src="" alt="Full-size Image" />
+	<img id="lightbox-image" src="" alt=""/>
 	<button class="prev-button">&lt;</button>
 	<button class="next-button">&gt;</button>
 </div>
