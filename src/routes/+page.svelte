@@ -1,5 +1,4 @@
 <script>
-	import Footer from './footer.svelte';
 	export let data;
 	import ProjectCard from './projectcard.svelte';
 	import { onMount } from 'svelte';
@@ -41,4 +40,3 @@
 		</section>
 	{/each}
 </main>
-<Footer />

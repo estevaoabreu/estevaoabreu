@@ -1,5 +1,4 @@
 <script>
-	import Footer from '../../footer.svelte';
 	import { setupSectionInteractions } from './gallery.js';
 	import { onMount } from 'svelte';
 	onMount(() => {
@@ -139,4 +138,3 @@
 	<button class="prev-button">&lt;</button>
 	<button class="next-button">&gt;</button>
 </div>
-<Footer />
