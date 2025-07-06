@@ -4,6 +4,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	export let pageMeta;
 
 	type ContentItem = {
 		col: number;
@@ -34,9 +35,9 @@
 </script>
 
 <svelte:head>
-	<title>{data.project.title} - Estêvão Abreu</title>
+	<title>{pageMeta.title}</title>
 	<link href="/css/work.css" rel="stylesheet" type="text/css" />
-	<meta name="description" content="{data.project.tagline}" />
+	<meta name="description" content={pageMeta.description} />
 </svelte:head>
 
 <div class="titlediv">

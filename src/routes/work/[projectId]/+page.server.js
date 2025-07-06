@@ -21,8 +21,14 @@ export async function load({ params }) {
     throw error(404, 'Project not found');
   }
 
+  const pageMeta = {
+    title: `${project.title} - Estêvão Abreu`,
+    description: project.tagline || 'A project by Estêvão Abreu, multimedia designer from Coimbra, Portugal.'
+  };
+
   return {
-    project: project
+    project: project,
+    pageMeta: pageMeta
   };
 }
 

@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	export let pageMeta
 	import ProjectCard from './projectcard.svelte';
 	import { onMount } from 'svelte';
 	import { setupSectionInteractions } from './section.js';
@@ -11,9 +12,9 @@
 </script>
 
 <svelte:head>
-	<title>Estêvão Abreu - Design Portfolio</title>
+	<title>{pageMeta.title}</title>
 	<link href="css/index.css" rel="stylesheet" type="text/css" />
-	<meta name="description" content="My name is Estêvão Abreu, and I a multimedia designer from Coimbra, Portugal. This is my portfolio." />
+	<meta name="description" content={pageMeta.description} />
 </svelte:head>
 
 <div class="intro">

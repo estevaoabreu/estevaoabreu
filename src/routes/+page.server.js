@@ -20,7 +20,13 @@ export async function load() {
     throw error(500, 'Failed to fetch portfolio data');
   }
 
+  const pageMeta = {
+    title: 'Estêvão Abreu - Design Portfolio',
+    description: 'My name is Estêvão Abreu, and I am a multimedia designer from Coimbra, Portugal. This is my portfolio.'
+  };
+
   return {
-    categories: categories
+    categories: categories,
+    pageMeta: pageMeta
   };
 }
