@@ -9,7 +9,9 @@
 		setupSectionInteractions();
 	});
 </script>
-
+<svelte:head>
+    <title>Estêvão Abreu - Design Portfolio</title> 
+</svelte:head>
 <link href="css/index.css" rel="stylesheet" type="text/css" />
 <div class="intro">
 	<p class="hello begin">HELLO, MY NAME IS</p>

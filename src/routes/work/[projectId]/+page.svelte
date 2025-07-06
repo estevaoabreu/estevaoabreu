@@ -35,7 +35,9 @@
 		}
 	}
 </script>
-
+<svelte:head>
+    <title>{data.project.title} - Estêvão Abreu</title> 
+</svelte:head>
 <link href="/css/work.css" rel="stylesheet" type="text/css" />
 <div class="titlediv">
 	<h1 class="title">{data.project.title}</h1>
