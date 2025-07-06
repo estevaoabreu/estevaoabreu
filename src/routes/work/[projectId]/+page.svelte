@@ -1,47 +1,48 @@
-<script>
-	import { setupSectionInteractions } from './gallery.js';
+<script lang="ts">
+	import { setupGallery } from './gallery.js';
 	import { onMount } from 'svelte';
-	onMount(() => {
-		setupSectionInteractions();
-	});
-	/** @type {import('./$types').PageData} */
-	export let data;
-	$: formattedTags =
-		data?.project?.tags
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	type ContentItem = {
+		col: number;
+	};
+
+	const createListFromString = (str: string | null | undefined): string =>
+		str
 			?.split(',')
-			?.map((tag) => `<li>${tag.trim()}</li>`)
-			.join('') || '';
-	$: formattedTools =
-		data?.project?.tools
-			?.split(',')
-			?.map((tool) => `<li>${tool.trim()}</li>`)
+			.map((item: string) => `<li>${item.trim()}</li>`)
 			.join('') || '';
 
-	let sections = [];
-	let currentArray = [];
+	$: formattedTags = createListFromString(data?.project?.tags);
+	$: formattedTools = createListFromString(data?.project?.tools);
 
-	if (data && data.content && Array.isArray(data.content)) {
-		for (const item of data.content) {
-			if (item.col === 0 && currentArray.length > 0) {
-				sections.push(currentArray);
-				currentArray = [item];
+	$: sections =
+		data?.project?.content?.reduce((acc: ContentItem[][], item: ContentItem) => {
+			if (item.col === 0 || acc.length === 0) {
+				acc.push([item]);
 			} else {
-				currentArray.push(item);
+				acc[acc.length - 1].push(item);
 			}
-		}
+			return acc;
+		}, []) || [];
 
-		if (currentArray.length > 0) {
-			sections.push(currentArray);
-		}
-	}
+	onMount(() => {
+		setupGallery();
+	});
 </script>
+
 <svelte:head>
-    <title>{data.project.title} - Estêvão Abreu</title> 
+	<title>{data.project.title} - Estêvão Abreu</title>
+	<link href="/css/work.css" rel="stylesheet" type="text/css" />
+	<meta name="description" content="{data.project.tagline}" />
 </svelte:head>
-<link href="/css/work.css" rel="stylesheet" type="text/css" />
+
 <div class="titlediv">
 	<h1 class="title">{data.project.title}</h1>
 </div>
+
 <div class="details">
 	<div class="textleft">
 		<div class="descandlink">
@@ -83,6 +84,7 @@
 		</div>
 	</div>
 </div>
+
 <main>
 	{#each sections as section}
 		{#each section as content}
@@ -90,7 +92,11 @@
 				{#if content.type == 'img'}
 					<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
 				{:else if content.type == 'video'}
-					<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
+					<video
+						src={'/imgs/' + content.projects_id + '/' + content.content}
+						controls
+						aria-hidden="true"
+					></video>
 				{/if}
 			{/if}
 		{/each}
@@ -99,16 +105,17 @@
 				{#each section as content}
 					{#if content.col == 1}
 						{#if content.type == 'img'}
-							<img
-								src={'/imgs/' + content.projects_id + '/' + content.content}
-								alt={content.alt}
-							/>
+							<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
+							<video
+								src={'/imgs/' + content.projects_id + '/' + content.content}
+								controls
+								aria-hidden="true"
+							></video>
 						{/if}
 					{/if}
 				{/each}
@@ -117,16 +124,17 @@
 				{#each section as content}
 					{#if content.col == 2}
 						{#if content.type == 'img'}
-							<img
-								src={'/imgs/' + content.projects_id + '/' + content.content}
-								alt={content.alt}
-							/>
+							<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
 							</p>
 						{:else if content.type == 'video'}
-							<video src={'/imgs/' + content.projects_id + '/' + content.content} controls aria-hidden="true"></video>
+							<video
+								src={'/imgs/' + content.projects_id + '/' + content.content}
+								controls
+								aria-hidden="true"
+							></video>
 						{/if}
 					{/if}
 				{/each}
@@ -134,9 +142,10 @@
 		</div>
 	{/each}
 </main>
+
 <div id="lightbox" class="lightbox hidden">
 	<span class="close-button">&times;</span>
-	<img id="lightbox-image" src="" alt=""/>
+	<img id="lightbox-image" src="" alt="" />
 	<button class="prev-button">&lt;</button>
 	<button class="next-button">&gt;</button>
 </div>

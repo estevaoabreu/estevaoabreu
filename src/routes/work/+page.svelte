@@ -9,9 +9,10 @@
 </script>
 
 <svelte:head>
-    <title>Estêvão Abreu - Works</title> 
+	<title>Estêvão Abreu - Works</title>
+	<link href="css/index.css" rel="stylesheet" type="text/css" />
+	<meta name="description" content="My name is Estêvão Abreu, and I a multimedia designer from Coimbra, Portugal. This is my portfolio." />
 </svelte:head>
-<link href="css/index.css" rel="stylesheet" type="text/css" />
 
 <main>
 	{#each data.categories as category}

@@ -3,7 +3,6 @@
 	export let title;
 	export let tagline;
 	export let src;
-
 	src = `imgs/${src}/${src}.png`;
 </script>
 

@@ -9,10 +9,13 @@
 		setupSectionInteractions();
 	});
 </script>
+
 <svelte:head>
-    <title>Estêvão Abreu - Design Portfolio</title> 
+	<title>Estêvão Abreu - Design Portfolio</title>
+	<link href="css/index.css" rel="stylesheet" type="text/css" />
+	<meta name="description" content="My name is Estêvão Abreu, and I a multimedia designer from Coimbra, Portugal. This is my portfolio." />
 </svelte:head>
-<link href="css/index.css" rel="stylesheet" type="text/css" />
+
 <div class="intro">
 	<p class="hello begin">HELLO, MY NAME IS</p>
 	<h1 class="estevao">
@@ -24,11 +27,11 @@
 		:)
 	</p>
 </div>
+
 <main>
 	{#each data.categories as category}
 		<section>
 			<p><span>+</span> {category.name}</p>
-
 			<div class="works hidden">
 				{#each category.projects as project}
 					<ProjectCard

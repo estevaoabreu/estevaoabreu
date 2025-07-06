@@ -1,31 +1,35 @@
 import { supabase } from '$lib/server/supabase';
 import { error } from '@sveltejs/kit';
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
   const { projectId } = params;
 
-  const { data: project, error: projectError } = await supabase
+  const { data: project, error: dbError } = await supabase
     .from('projects')
-    .select('*')
+    .select(`
+      *,
+      content (
+        *
+      )
+    `)
     .eq('id', projectId)
+    .order('position', { foreignTable: 'content', ascending: true })
     .single();
 
-  if (projectError || !project) {
-    throw error(404, `Project not found`);
-  }
-
-  const { data: content, error: contentError } = await supabase
-    .from('content')
-    .select('*')
-    .eq('projects_id', projectId)
-    .order('position');
-
-  if (contentError) {
-    throw error(500, 'Failed to load content for the project');
+  if (dbError || !project) {
+    throw error(404, 'Project not found');
   }
 
   return {
-    project,
-    content
+    project: project
   };
 }
+
+/** @type {import('./$types').EntryGenerator} */
+export async function entries() {
+  const { data: projects } = await supabase.from('projects').select('id');
+  return projects?.map((p) => ({ projectId: p.id })) || [];
+}
+
+export const prerender = true;
