@@ -4,7 +4,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	export let pageMeta;
+	const { pageMeta } = data;
 
 	type ContentItem = {
 		col: number;

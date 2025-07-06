@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	export let pageMeta
+	const { pageMeta } = data;
 	import ProjectCard from './projectcard.svelte';
 	import { onMount } from 'svelte';
 	import { setupSectionInteractions } from './section.js';

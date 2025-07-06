@@ -22,7 +22,7 @@ export async function load({ params }) {
   }
 
   const pageMeta = {
-    title: `${project.title} - Estêvão Abreu`,
+    title: `${project.title} - Estêvão Abreu` || 'Estêvão Abreu - Design Portfolio',
     description: project.tagline || 'A project by Estêvão Abreu, multimedia designer from Coimbra, Portugal.'
   };
 
