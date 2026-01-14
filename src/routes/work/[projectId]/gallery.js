@@ -30,7 +30,7 @@ export function setupGallery() {
     const image = galleryImages[index];
     if (!image) return;
     if (!lightboxImage) return;
-    lightboxImage.src = image.src;
+    lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt;
     currentIndex = index;
     if (!lightbox) return;

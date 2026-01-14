@@ -29,6 +29,8 @@
 			return acc;
 		}, []) || [];
 
+	$: firstImgItem = data?.project?.content?.find((item: any) => item.type === 'img');
+
 	onMount(() => {
 		setupGallery();
 	});
@@ -91,7 +93,22 @@
 		{#each section as content}
 			{#if content.col == 0}
 				{#if content.type == 'img'}
-					<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
+					<picture>
+						<source
+							srcset={'/imgs/' +
+								content.projects_id +
+								'/' +
+								content.content.split('.').slice(0, -1).join('.') +
+								'.webp'}
+							type="image/webp"
+						/>
+						<img
+							src={'/imgs/' + content.projects_id + '/' + content.content}
+							alt={content.alt}
+							loading={content === firstImgItem ? 'eager' : 'lazy'}
+							fetchpriority={content === firstImgItem ? 'high' : 'auto'}
+						/>
+					</picture>
 				{:else if content.type == 'video'}
 					<video
 						src={'/imgs/' + content.projects_id + '/' + content.content}
@@ -106,7 +123,22 @@
 				{#each section as content}
 					{#if content.col == 1}
 						{#if content.type == 'img'}
-							<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
+							<picture>
+								<source
+									srcset={'/imgs/' +
+										content.projects_id +
+										'/' +
+										content.content.split('.').slice(0, -1).join('.') +
+										'.webp'}
+									type="image/webp"
+								/>
+								<img
+									src={'/imgs/' + content.projects_id + '/' + content.content}
+									alt={content.alt}
+									loading={content === firstImgItem ? 'eager' : 'lazy'}
+									fetchpriority={content === firstImgItem ? 'high' : 'auto'}
+								/>
+							</picture>
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
@@ -125,7 +157,22 @@
 				{#each section as content}
 					{#if content.col == 2}
 						{#if content.type == 'img'}
-							<img src={'/imgs/' + content.projects_id + '/' + content.content} alt={content.alt} />
+							<picture>
+								<source
+									srcset={'/imgs/' +
+										content.projects_id +
+										'/' +
+										content.content.split('.').slice(0, -1).join('.') +
+										'.webp'}
+									type="image/webp"
+								/>
+								<img
+									src={'/imgs/' + content.projects_id + '/' + content.content}
+									alt={content.alt}
+									loading={content === firstImgItem ? 'eager' : 'lazy'}
+									fetchpriority={content === firstImgItem ? 'high' : 'auto'}
+								/>
+							</picture>
 						{:else if content.type == 'p'}
 							<p>
 								{content.content}
